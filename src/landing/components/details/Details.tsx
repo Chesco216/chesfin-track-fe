@@ -21,12 +21,12 @@ const details = [
 
 export const Details = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-slate-100 py-10">
       <div className="self-center flex flex-col items-center gap-5">
         <h2 className="text-2xl">Build for precision</h2>
         <p className="text-gray-500">Simple tools for complex desicions</p>
       </div>
-      <ul className="flex flex-col mt-15 px-8 gap-5">
+      <ul className="flex flex-col mt-15 px-8 gap-5 xl:grid xl:grid-cols-3 xl:gap-10">
         {
           details &&
           details.map(detail =>

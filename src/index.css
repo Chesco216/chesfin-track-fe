@@ -3,6 +3,8 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/inter";
 
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @custom-variant dark (&:is(.dark *));
 
 @theme {
@@ -10,6 +12,9 @@
   --color-tpurlple: #452E5A;
   --color-torange: #FF653F;
   --color-tyellow: #FFC85C;
+
+  --font-jetbrains: "JetBrains Mono", sans-serif;
+
 }
 
 @theme inline {
@@ -128,9 +133,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
