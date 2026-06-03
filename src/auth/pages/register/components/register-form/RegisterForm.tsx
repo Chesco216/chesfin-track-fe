@@ -43,6 +43,7 @@ export const RegisterForm = () => {
       <fieldset className="flex flex-row border-2 border-gary-100 p-4 rounded-md gap-2 mb-5">
         <Lock color="oklch(55.1% 0.027 264.364)" />
         <input
+          className="w-full"
           required
           type={isHiddenPassword ? 'password' : 'text'}
           placeholder="**********"

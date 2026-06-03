@@ -10,7 +10,7 @@ export const Register = () => {
       description='Join now to track and grow your assets'
     >
       <RegisterForm />
-      <p className='mt-5'>Already have an account?
+      <p className='mt-5 xl:hidden'>Already have an account?
         <Link
           className='ml-2 font-semibold underline'
           to='/login'
