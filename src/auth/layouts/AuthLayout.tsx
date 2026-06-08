@@ -13,8 +13,6 @@ export const AuthLayout = ({ children, title, description }: Props) => {
 
   const location = useLocation()
 
-  console.log({ location })
-
   return (
     <div className="flex flex-col w-screen h-screen bg-slate-50">
       <div className="hidden xl:flex flex-row bg-gray-100 py-4 px-20 justify-between items-center">

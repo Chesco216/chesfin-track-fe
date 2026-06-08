@@ -1,16 +1,31 @@
+import { loginAction } from "@/auth/actions/login-action"
+import { useAuth } from "@/auth/store/auth.store"
 import { Button } from "@/components/ui/button"
 import { Eye, Lock, Mail } from "lucide-react"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
+import { useNavigate } from "react-router"
 
 export const LoginForm = () => {
 
-  const { register, handleSubmit, formState: { errors } } = useForm()
+  const { register, getValues, handleSubmit, formState: { errors } } = useForm()
+  const { login } = useAuth()
+
   const [isHiddenPassword, setIsHiddenPassword] = useState<boolean>(true)
 
-  const onSubmit = () => {
+  const navigate = useNavigate()
+
+  const onSubmit = async () => {
     if (errors)
       console.log({ errors })
+    const values = getValues()
+
+    const user = await loginAction({ ...values })
+
+    login(user)
+
+    navigate('/dashboard')
+
   }
 
   return (
