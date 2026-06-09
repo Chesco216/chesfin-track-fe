@@ -13,7 +13,7 @@ export const Register = () => {
       <p className='mt-5 xl:hidden'>Already have an account?
         <Link
           className='ml-2 font-semibold underline'
-          to='/login'
+          to='/auth/login'
         >
           Login here
         </Link>

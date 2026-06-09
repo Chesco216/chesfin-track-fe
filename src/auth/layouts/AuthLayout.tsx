@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 import logo from '@/assets/logo.svg'
-import { Link, useLocation } from "react-router"
+import { Link, useLocation, useNavigate } from "react-router"
 import { Copyright } from "lucide-react"
 
 interface Props {
@@ -12,17 +12,18 @@ interface Props {
 export const AuthLayout = ({ children, title, description }: Props) => {
 
   const location = useLocation()
+  const navigate = useNavigate()
 
   return (
     <div className="flex flex-col w-screen h-screen bg-slate-50">
       <div className="hidden xl:flex flex-row bg-gray-100 py-4 px-20 justify-between items-center">
         <div className="flex flex-row items-center gap-5">
-          <img className='' src={logo} alt="logo" width={60} />
+          <img className='' src={logo} alt="logo" width={60} onClick={() => navigate('/')} />
           <h2 className="font-semibold text-2xl">Chesfin Finance</h2>
         </div>
         <div className="flex flex-row gap-3">
-          <p className="font-jetbrains uppercase text-gray-500">{location.pathname == '/login' ? 'Dont have an account?' : 'Already have an account?'}</p>
-          <Link className="font-semibold underline" to={location.pathname == '/login' ? '/register' : '/login'}>{location.pathname == '/login' ? 'Create an account' : 'Login'}</Link>
+          <p className="font-jetbrains uppercase text-gray-500">{location.pathname == '/auth/login' ? 'Dont have an account?' : 'Already have an account?'}</p>
+          <Link className="font-semibold underline" to={location.pathname == '/auth/login' ? '/auth/register' : '/auth/login'}>{location.pathname == '/auth/login' ? 'Create an account' : 'Login'}</Link>
         </div>
       </div>
       <div className="xl:grid xl:grid-cols-2 h-full">

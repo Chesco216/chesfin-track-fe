@@ -1,17 +1,29 @@
+import { useAuth } from "@/auth/store/auth.store"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Eye, Lock, Mail, User } from "lucide-react"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
+import { useNavigate } from "react-router"
 
 export const RegisterForm = () => {
 
-  const { register, handleSubmit, formState: { errors } } = useForm()
-  const [isHiddenPassword, setIsHiddenPassword] = useState<boolean>(true)
+  const { register, getValues, handleSubmit, formState: { errors } } = useForm()
+  const { register: registerUser } = useAuth()
 
-  const onSubmit = () => {
+  const [isHiddenPassword, setIsHiddenPassword] = useState<boolean>(true)
+  const navigate = useNavigate()
+
+  const onSubmit = async () => {
     if (errors)
       console.log({ errors })
+    const name = getValues('name')
+    const email = getValues('email')
+    const password = getValues('password')
+
+    await registerUser({ name, email, password })
+
+    navigate('/app/dashboard')
   }
 
   return (

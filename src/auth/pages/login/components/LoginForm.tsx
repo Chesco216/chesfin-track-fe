@@ -18,13 +18,13 @@ export const LoginForm = () => {
   const onSubmit = async () => {
     if (errors)
       console.log({ errors })
-    const values = getValues()
 
-    const user = await loginAction({ ...values })
+    const email = getValues('email')
+    const password = getValues('password')
 
-    login(user)
+    await login({ email, password })
 
-    navigate('/dashboard')
+    navigate('/app/dashboard')
 
   }
 

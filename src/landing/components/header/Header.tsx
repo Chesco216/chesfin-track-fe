@@ -16,13 +16,13 @@ export const Header = () => {
       </div>
       <div className='flex flex-row gap-3'>
         <Button
-          onClick={() => navigate('/login')}
+          onClick={() => navigate('/auth/login')}
           className='hidden xl:flex xl:bg-white xl:border xl:border-black xl:text-black hover:bg-black hover:text-white xl:text-lg'
         >
           Log in
         </Button>
         <Button
-          onClick={() => navigate('/register')}
+          onClick={() => navigate('/auth/register')}
           className='xl:text-lg p-4'
         >
           GetStarted

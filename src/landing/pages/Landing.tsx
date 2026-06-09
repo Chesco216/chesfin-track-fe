@@ -23,13 +23,13 @@ export const Landing = () => {
 
       <div className="flex xl:flex-row justify-center mb-10">
         <Button
-          onClick={() => navigate('/register')}
+          onClick={() => navigate('/auth/register')}
           className="bg-torange hover:text-torange hover:bg-orange-200 mx-5 py-10 text-lg xl:px-20 xl:rounded-lg"
         >
           Start for free
         </Button>
         <Button
-          onClick={() => navigate('/login')}
+          onClick={() => navigate('/auth/login')}
           className="hidden xl:flex bg-white text-black border border-black hover:text-white hover:bg-black py-10 text-lg px-20 box-border rounded-lg"
         >
           Log in
@@ -41,7 +41,7 @@ export const Landing = () => {
         <h3 className="text-5xl text-white mb-5">Ready to reach your submit?</h3>
         <p className="text-gray-300 mb-10">Join now to transfor your relationship with money with precision tracking</p>
         <Button
-          onClick={() => navigate('/register')}
+          onClick={() => navigate('/auth/register')}
           className="bg-torange hover:text-torange hover:bg-orange-200 mx-5 py-10 text-lg xl:px-20 xl:rounded-lg"
         >
           Get Started Now — It's Free

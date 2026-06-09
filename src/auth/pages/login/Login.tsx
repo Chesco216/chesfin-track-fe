@@ -12,7 +12,7 @@ export const Login = () => {
       <p className='mt-5 xl:hidden'>Already have an account?
         <Link
           className='ml-2 font-semibold underline'
-          to='/register'
+          to='/auth/register'
         >
           Create an account
         </Link>
