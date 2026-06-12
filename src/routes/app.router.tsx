@@ -43,6 +43,22 @@ const routes: RouteObject[] = [
         path: 'dashboard',
         element: <DashboardPage />
       },
+      {
+        path: 'transactions',
+        element: <div>transactions</div>
+      },
+      {
+        path: 'budgets',
+        element: <div>budgets</div>
+      },
+      {
+        path: 'recurring',
+        element: <div>recurring</div>
+      },
+      {
+        path: 'insights',
+        element: <div>insights</div>
+      },
     ]
   }
 ]

@@ -1,6 +1,6 @@
 export const DashboardPage = () => {
   return (
-    <div>
+    <div className="">
       <p>pipipi from dashboard</p>
     </div>
   )

@@ -1,4 +1,4 @@
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarProvider } from "@/components/ui/sidebar"
 import { Outlet } from "react-router"
 import { AppHeader } from "../components/app-header/AppHeader"
 import { AppSideBar } from "../components/sidebar/AppSideBar"
@@ -8,7 +8,6 @@ export const AuthenticatedLayout = () => {
     <div className="flex flex-col">
       <SidebarProvider>
         <AppSideBar />
-        <SidebarTrigger />
         <main className="w-full flex flex-col">
           <AppHeader />
           <Outlet />
