@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .env
+.opencode
+AGENTS.md
+graphify-out

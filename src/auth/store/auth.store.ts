@@ -26,7 +26,7 @@ type AuthState = UserState & AuthActions
 export const useAuth = create<AuthState>()((set) => ({
   user: null,
   token: null,
-  authStatus: 'not-authenticated',
+  authStatus: 'checking',
   login: async (credentials: LoginUserDto) => {
     try {
       const res = await loginAction(credentials)
@@ -52,7 +52,7 @@ export const useAuth = create<AuthState>()((set) => ({
     try {
       const res = await checkAuthstatus()
       localStorage.setItem('token', res.token)
-      set(res)
+      set({ ...res, authStatus: 'authenticated' })
       return true
     } catch (error) {
       set({ user: null, token: null, authStatus: 'not-authenticated' })

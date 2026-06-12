@@ -1,14 +1,38 @@
 import { useAuth } from "@/auth/store/auth.store"
-import { useEffect, type PropsWithChildren } from "react"
+import { Spinner } from "@/components/ui/spinner"
+import { useEffect, useRef, useState, type PropsWithChildren } from "react"
 import { Navigate, Outlet } from "react-router"
 import { toast } from "sonner"
 
 export const Authenticated = ({ children }: PropsWithChildren) => {
 
-  const { authStatus } = useAuth()
+  const { authStatus, checkAuthStatus, logout } = useAuth()
+  const [localeChecking, setLocaleChecking] = useState(false)
+  const triedRef = useRef(false)
+
+  useEffect(() => {
+    if (!triedRef.current) {
+      const token = localStorage.getItem('token')
+      if (token) {
+        triedRef.current = true
+        setLocaleChecking(true)
+        checkAuthStatus().finally(() => setLocaleChecking(false))
+      } else {
+        logout()
+      }
+    }
+  }, [logout, checkAuthStatus])
+
+  if (authStatus == 'checking' || localeChecking) {
+    return (
+      <div className="flex flex-row w-screen h-screen justify-center items-center">
+        <Spinner />
+      </div>
+    )
+  }
 
   if (authStatus == 'not-authenticated') {
-    toast.error('Log in to access dashboard ')
+    toast.error('Log in to access dashboard')
     return <Navigate to='/' />
   }
 
@@ -19,7 +43,7 @@ export const NotAuthenticated = () => {
 
   const { authStatus, checkAuthStatus } = useAuth()
   useEffect(() => {
-    checkAuthStatus().then()
+    checkAuthStatus().catch()
   }, [])
 
   if (authStatus == 'authenticated') {
@@ -28,3 +52,5 @@ export const NotAuthenticated = () => {
 
   return <Outlet />
 }
+
+
