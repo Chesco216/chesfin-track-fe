@@ -5,6 +5,7 @@ import { Eye, Lock, Mail, User } from "lucide-react"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router"
+import { toast } from "sonner"
 
 export const RegisterForm = () => {
 
@@ -21,8 +22,12 @@ export const RegisterForm = () => {
     const email = getValues('email')
     const password = getValues('password')
 
-    await registerUser({ name, email, password })
+    const res = await registerUser({ name, email, password })
 
+    if (!res) {
+      toast.error('email already in use', { position: 'top-center' })
+      return
+    }
     navigate('/app/dashboard')
   }
 
@@ -69,7 +74,7 @@ export const RegisterForm = () => {
         </button>
       </fieldset>
       <label className="flex flex-row gap-2 items-center mb-5">
-        <Checkbox className="w-6 h-6" />
+        <Checkbox required className="w-6 h-6" />
         <p>I agree to the Terms and Conditions and the Privacy Policy.</p>
       </label>
       <Button

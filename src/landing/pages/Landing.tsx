@@ -9,6 +9,7 @@ export const Landing = () => {
 
   const navigate = useNavigate()
 
+  //TODO: Redirect if user is already logged-in
   return (
     <MainLayout>
       <div className="xl:hidden flex flex-col my-15 gap-5">
