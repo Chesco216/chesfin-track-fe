@@ -5,6 +5,7 @@ import { Register } from "@/auth/pages/register/Register"
 import { Authenticated, NotAuthenticated } from "./private-routes/Authenticated.route"
 import { DashboardPage } from "@/dashboard/pages/dashboard/DashboardPage"
 import { AuthenticatedLayout } from "@/common/layouts/AuthenticatedLayout"
+import { TransactionsPage } from "@/transactions/pages/TransactionsPage"
 
 
 const routes: RouteObject[] = [
@@ -45,7 +46,7 @@ const routes: RouteObject[] = [
       },
       {
         path: 'transactions',
-        element: <div>transactions</div>
+        element: <TransactionsPage />
       },
       {
         path: 'budgets',
