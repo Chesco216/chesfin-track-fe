@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Details } from "../components/details/Details"
-import { MainLayout } from "../layouts/MainLayout"
+import { LandingLayout } from "../layouts/LandingLayout"
 import { Sparkles } from "lucide-react"
 import { Savings } from "../components/savings/Savings"
 import { useNavigate } from "react-router"
@@ -9,9 +9,8 @@ export const Landing = () => {
 
   const navigate = useNavigate()
 
-  //TODO: Redirect if user is already logged-in
   return (
-    <MainLayout>
+    <LandingLayout>
       <div className="xl:hidden flex flex-col my-15 gap-5">
         <h2 className="self-center bg-tblue text-white px-4 py-1.5 rounded-3xl font-jetbrains text-md">MASTER YOUR MONEY</h2>
         <p className="px-10 text-center">Take control of your finance with precision and minimalism. Designed for clarity, speed and growth</p>
@@ -48,7 +47,7 @@ export const Landing = () => {
           Get Started Now — It's Free
         </Button>
       </div>
-    </MainLayout>
+    </LandingLayout>
   )
 }
 

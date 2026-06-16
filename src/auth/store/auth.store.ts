@@ -51,6 +51,7 @@ export const useAuth = create<AuthState>()((set) => ({
   checkAuthStatus: async () => {
     try {
       const res = await checkAuthstatus()
+      if (!res) return false
       localStorage.setItem('token', res.token)
       set({ ...res, authStatus: 'authenticated' })
       return true

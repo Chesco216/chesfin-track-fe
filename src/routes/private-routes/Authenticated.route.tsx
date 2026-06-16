@@ -42,8 +42,10 @@ export const Authenticated = ({ children }: PropsWithChildren) => {
 export const NotAuthenticated = () => {
 
   const { authStatus, checkAuthStatus } = useAuth()
+  const token = localStorage.getItem('token')
   useEffect(() => {
-    checkAuthStatus().catch()
+    if (token)
+      checkAuthStatus().catch()
   }, [])
 
   if (authStatus == 'authenticated') {

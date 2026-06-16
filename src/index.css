@@ -142,3 +142,13 @@
     @apply font-sans;
   }
 }
+
+.category-open {
+  scale: 1;
+  transition: ease-out 250;
+}
+
+.category-close {
+  scale: 0;
+  transition: ease-out 250;
+}
