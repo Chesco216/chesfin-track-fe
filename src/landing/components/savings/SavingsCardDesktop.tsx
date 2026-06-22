@@ -2,7 +2,7 @@ import { Progress } from "@/components/ui/progress"
 
 export const SavingsCardDesktop = () => {
   return (
-    <div className="hidden xl:flex flex-col m-10 p-10 border-2 border-slate-200 bg-white rounded-lg gap-5">
+    <div className="hidden lg::flex flex-col m-10 p-10 border-2 border-slate-200 bg-white rounded-lg gap-5">
       <div className="flex flex-col justify-between border border-slate-200 rounded-lg p-5 gap-5">
         <div className="flex flex-row justify-between">
           <p className="font-jetbrains font-semibold text-gray-500 text-sm">HOME DOWN PAYMENT</p>

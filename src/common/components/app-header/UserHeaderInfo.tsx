@@ -14,7 +14,7 @@ export const UserHeaderInfo = ({ className }: Props) => {
     <div className={cn("flex flex-row items-center gap-2", className)}>
       {
         (user) &&
-        <ul className="hidden xl:flex flex-col py-2">
+        <ul className="hidden lg:flex flex-col py-2">
           <li className="font-semibold text-md">
             {user.name}
           </li>

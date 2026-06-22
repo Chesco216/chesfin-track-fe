@@ -10,7 +10,7 @@ export const PageTitle = ({ className }: Props) => {
   const location = useLocation()
 
   return (
-    <h1 className={cn("font-bold text-xl xl:hidden", className)} >
+    <h1 className={cn("font-bold text-xl lg:hidden", className)} >
       {
         location.pathname == '/app/dashboard'
           ? 'Dashboard'

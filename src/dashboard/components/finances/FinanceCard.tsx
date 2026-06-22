@@ -15,7 +15,7 @@ export const FinanceCard = ({ title, amount, rate, icon }: Props) => {
   };
 
   return (
-    <div className="hidden xl:flex flex-col bg-white border-2 border-gray-300 p-8 rounded-2xl">
+    <div className="hidden lg:flex flex-col bg-white border-2 border-gray-300 p-8 rounded-2xl">
       <div className="flex flex-row justify-between mb-5">
         {icon}
         <p

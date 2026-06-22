@@ -26,7 +26,7 @@ export const Details = () => {
         <h2 className="text-2xl">Build for precision</h2>
         <p className="text-gray-500">Simple tools for complex desicions</p>
       </div>
-      <ul className="flex flex-col mt-15 px-8 gap-5 xl:grid xl:grid-cols-3 xl:gap-10">
+      <ul className="flex flex-col mt-15 px-8 gap-5 lg:grid lg:grid-cols-3 lg:gap-10">
         {
           details &&
           details.map(detail =>

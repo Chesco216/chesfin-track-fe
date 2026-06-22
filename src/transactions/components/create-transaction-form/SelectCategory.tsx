@@ -1,13 +1,17 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, type SetStateAction } from "react"
 import { CreateCategory } from "./CreateCategory"
 import { getAllCategoriesAction, type CategoryResponse } from "@/transactions/actions/get-all-categories-action"
 import { icons } from "../icons/icons"
 
-export const SelectCategory = () => {
+interface Props {
+  selectedCategory: string
+  setSelectedCategory: React.Dispatch<SetStateAction<string>>
+}
+
+export const SelectCategory = ({ selectedCategory, setSelectedCategory }: Props) => {
 
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
-  const [selectedCategory, setSelecetedCategory] = useState<string>()
   const [categories, setCategories] = useState<CategoryResponse[] | []>([])
 
   useEffect(() => {
@@ -33,7 +37,7 @@ export const SelectCategory = () => {
               return (
                 <span
                   key={category.id}
-                  onClick={() => setSelecetedCategory(category.id)}
+                  onClick={() => setSelectedCategory(category.id)}
                   className={`flex flex-col items-center p-4 rounded-lg gap-4 ${selectedCategory == category.id ? 'bg-tblue text-white' : 'bg-white border'}`}
                 >
                   <p className={`${selectedCategory == category.id ? '' : 'bg-gray-300'} rounded-full p-3`}>

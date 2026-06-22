@@ -2,7 +2,7 @@ import { Progress } from "@/components/ui/progress"
 
 export const SavingsCard = () => {
   return (
-    <div className="xl:hidden flex flex-col m-2 p-5 border border-slate-100 bg-white rounded-lg gap-5">
+    <div className="lg:hidden flex flex-col m-2 p-5 border border-slate-100 bg-white rounded-lg gap-5">
       <p className="font-jetbrains font-semibold text-gray-500 text-sm">CURRENT SAVINGS GOAL</p>
       <div className="flex flex-row justify-between">
         <p className="text-4xl">$42000</p>

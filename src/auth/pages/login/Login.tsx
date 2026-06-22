@@ -9,7 +9,7 @@ export const Login = () => {
       description="Enter your credentials to access your wealth dashboard"
     >
       <LoginForm />
-      <p className='mt-5 xl:hidden'>Already have an account?
+      <p className='mt-5 lg:hidden'>Already have an account?
         <Link
           className='ml-2 font-semibold underline'
           to='/auth/register'

@@ -40,6 +40,7 @@ export const RegisterForm = () => {
       <fieldset className="flex flex-row border-2 border-gary-100 p-4 rounded-md gap-2 mb-5">
         <User color="oklch(55.1% 0.027 264.364)" />
         <input
+          className="focus:outline-none"
           required
           type="text"
           placeholder="Your Name"
@@ -50,6 +51,7 @@ export const RegisterForm = () => {
       <fieldset className="flex flex-row border-2 border-gary-100 p-4 rounded-md gap-2 mb-5">
         <Mail color="oklch(55.1% 0.027 264.364)" />
         <input
+          className="focus:outline-none"
           required
           type="email"
           placeholder="youremail@mail.com"
@@ -60,7 +62,7 @@ export const RegisterForm = () => {
       <fieldset className="flex flex-row border-2 border-gary-100 p-4 rounded-md gap-2 mb-5">
         <Lock color="oklch(55.1% 0.027 264.364)" />
         <input
-          className="w-full"
+          className="w-full outline-none"
           required
           type={isHiddenPassword ? 'password' : 'text'}
           placeholder="**********"

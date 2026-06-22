@@ -44,7 +44,7 @@ export const MonthPicker = () => {
     }
   }
   return (
-    <div className="hidden xl:flex flex-row items-center w-fit pl-5">
+    <div className="hidden lg:flex flex-row items-center w-fit pl-5">
       <ChevronLeft onClick={() => handleChangeMonth('left')} className="text-gray-500" />
       <div className="flex flex-row px-2 bg-gray-100 items-center rounded-2xl">
         <Calendar className="mr-3" width={15} height={15} />

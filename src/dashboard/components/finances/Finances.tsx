@@ -31,8 +31,8 @@ export const Finances = () => {
   };
 
   return (
-    <div className="flex xl:grid xl:grid-cols-3 gap-8">
-      <div className="xl:hidden w-full flex flex-col bg-tblue p-6 gap-5 rounded-2xl">
+    <div className="flex lg:grid lg:grid-cols-3 gap-8">
+      <div className="lg:hidden w-full flex flex-col bg-tblue p-6 gap-5 rounded-2xl">
         <p className="text-sm font-semibold text-gray-400">{balance.title}</p>
         <p className="font-bold text-white text-4xl">$ {balance.amount.toLocaleString('en-Us', options)}</p>
         <div className="flex flex-wor gap-8">
